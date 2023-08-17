@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <io.supercharge.shimmerlayout.ShimmerLayout
+        android:id="@+id/shimmer_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/slide_counter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sub_title"
+        app:shimmer_animation_duration="1200">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.fragments.FilmDetail">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/kollektifbold"
+                android:textColor="#ff000000"
+                android:textSize="32sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/kollektif"
+                android:textColor="#A5A5A5"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/posterCard"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/reteRecyclerView"
+                app:layout_constraintEnd_toStartOf="@+id/filmDetailLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/year">
+
+                <ImageView
+                    android:id="@+id/poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/filmDetailLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/reteRecyclerView"
+                app:layout_constraintLeft_toRightOf="@+id/posterCard"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/year">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="@drawable/film_detail_circle_gray"
+                    android:padding="20dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:foreground="@drawable/film_detail_circle_gray"
+                    android:padding="20dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:foreground="@drawable/film_detail_circle_gray"
+                    android:padding="20dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:foreground="@drawable/film_detail_circle_gray"
+                    android:padding="20dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/reteRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="#ffffff"
+                app:layout_constraintTop_toBottomOf="@+id/posterCard" />
+
+            <TextView
+                android:id="@+id/detail1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="8dp"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reteRecyclerView" />
+
+
+            <TextView
+                android:id="@+id/metaScoreCard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:background="@drawable/film_detail_circle_gray"
+                android:gravity="center"
+                android:padding="24dp"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imdbRatingCard"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/imdbRatingCard"
+                app:layout_constraintTop_toTopOf="@+id/imdbRatingCard" />
+
+
+            <TextView
+                android:id="@+id/imdbRatingCard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/film_detail_circle_gray"
+                android:gravity="center"
+                android:padding="24dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/metaScoreCard"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reteRecyclerView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </io.supercharge.shimmerlayout.ShimmerLayout>
+
+</layout>
